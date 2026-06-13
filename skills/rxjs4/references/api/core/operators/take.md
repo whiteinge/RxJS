@@ -1,0 +1,33 @@
+### `Rx.Observable.prototype.take(count, [scheduler])`
+[&#x24C8;](https://github.com/Reactive-Extensions/RxJS/blob/master/src/core/perf/operators/take.js "View in source")
+
+Returns a specified number of contiguous elements from the start of an observable sequence, using the specified scheduler for the edge case of `take(0)`.
+
+#### Arguments
+1. `count` *(`Number`)*: The number of elements to return.
+2. `[scheduler]` *(`Scheduler`)*: Scheduler used to produce an onCompleted message in case `count` is set to 0.
+
+#### Returns
+*(`Observable`)*: An observable sequence that contains the elements before and including the specified index in the input sequence.
+
+#### Example
+```js
+var source = Rx.Observable.range(0, 5)
+    .take(3);
+
+var subscription = source.subscribe(
+    function (x) {
+        console.log('Next: ' + x);
+    },
+    function (err) {
+        console.log('Error: ' + err);
+    },
+    function () {
+        console.log('Completed');
+    });
+
+// => Next: 0
+// => Next: 1
+// => Next: 2
+// => Completed
+```
