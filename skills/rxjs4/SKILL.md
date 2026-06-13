@@ -6,7 +6,7 @@ metadata:
   author: Microsoft Open Technologies / ReactiveX contributors
   version: "4.1.0"
   repository: https://github.com/Reactive-Extensions/RxJS
-allowed-tools: Read
+allowed-tools: Read, Grep, Glob
 ---
 
 # RxJS v4
